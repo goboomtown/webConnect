@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test WebConnect Container</title>
+    <script type="application/javascript" src="https://http://webconnect.goboomtown.com/assets/webConnect.js"></script>
+    <script type="application/javascript">
+        window.onload = function() {
+            WebConnect.load('#web-connect', {
+                partnerToken: '1234567890ABCDEFGHIJ',
+                partnerTeam: 'ABC-123',
+                width: '440px',
+                height: '640px',
+                supportEmail: 'true',
+                supportPhone: 'true',
+                supportWebsite: 'true',
+                routeTo: 'boomtown'
+            });
+        };
+    </script>
+</head>
+<body>
+<div id="web-connect"></div>
+</body>
+</html>
