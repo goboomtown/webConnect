@@ -5,6 +5,19 @@
     <title>Test WebConnect Container</title>
     <script type="application/javascript" src="https://http://webconnect.goboomtown.com/assets/webConnect.js"></script>
     <script type="application/javascript">
+        /**
+         * Loads an instance of webConnect into element `el`.
+         *
+         * @param {String|Element} el An element, elementId or query string (e.g. #web-connect, #mySupportDiv, div.webConnect, etc.)
+         * @param {String} [options.width=640px] iFrame width
+         * @param {String} [options.height=480px] iFrame height
+         * @param {String} options.partnerToken API public key/token for the Partner Team. Required.
+         * @param {String} options.partnerTeam Partner Team ID from which private label settings, support email/phone/website are derived, and members are created/authenticated and linked to. Required.
+         * @param {String} [options.supportEmail] Whether or not to offer the 'Email Support' choice on the help screen. Optional, default to true.
+         * @param {String} [options.supportPhone] Whether or not to offer the 'Phone Support' choice on the help screen. Optional, default to true.
+         * @param {String} [options.supportWebsite] Whether or not to offer the 'Web Support' choice on the help screen. Optional, default to true.
+         * @param {String} [options.routeTo] 'default', 'boomtown', 'provider'. Controls whether to force route new issues created to Boomtown, to the Partner Team, or to not specify and thus allow the default behavior on the back-end.
+         */
         window.onload = function() {
             WebConnect.load('#web-connect', {
                 partnerToken: '1234567890ABCDEFGHIJ',
