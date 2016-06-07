@@ -60,7 +60,7 @@ A JavaScript SDK that allows Connect partners to integrate issue creation, notif
 ## Usage
 ### Include webConnect.js
 ```
-<script type="application/javascript" src="https://http://webconnect.goboomtown.com/assets/webConnect.js"></script>
+<script type="application/javascript" src="https://webconnect.goboomtown.com/assets/webConnect.js"></script>
 ```
 ### Include Code Snippet
 ```
