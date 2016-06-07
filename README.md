@@ -7,6 +7,7 @@ A JavaScript SDK that allows Connect partners to integrate issue creation, notif
 1. Clone this Repository
 2. Include webConnect.js in the head of your page
 3. Include webConnect snippet in your page
+4. Add id to element in your page
 4. Set your partnerToken and PartnerTeam, and set your desired parameters
 
 ## Provider Token Generation
