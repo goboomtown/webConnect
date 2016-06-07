@@ -53,14 +53,14 @@ A JavaScript SDK that allows Connect partners to integrate issue creation, notif
 5. Click on the "Teams" tab
 6. Find your team in the list
 7. Double-Click your team to show the "Edit Team" window
-8. Select your logo size in the "File Type" select; Brand Logo (125x20), Brand Logo (250x40), or Brand Logo (500x60) in t
+8. Select your logo size in the "File Type" select; Brand Logo (125x20), Brand Logo (250x40), or Brand Logo (500x60)
 9. Click on "Select File" button and select your local file
 10. Click on "Upload File" button to upload and save your file
 
 ## Usage
 ### Include webConnect.js
 ```
-<script type="application/javascript" src="https://http://webconnect.goboomtown.com/assets/webConnect.js"></script>
+<script type="application/javascript" src="https://webconnect.goboomtown.com/assets/webConnect.js"></script>
 ```
 ### Include Code Snippet
 ```
