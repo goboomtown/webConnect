@@ -58,6 +58,8 @@ A JavaScript SDK that allows Connect partners to integrate issue creation, notif
 10. Click on "Upload File" button to upload and save your file
 
 ## Usage
+
+## For the Embedded version
 ### Include webConnect.js
 ```
 <script type="application/javascript" src="https://webconnect.goboomtown.com/assets/webConnect.js"></script>
@@ -88,6 +90,49 @@ A JavaScript SDK that allows Connect partners to integrate issue creation, notif
                 supportPhone: 'true',
                 supportWebsite: 'true',
                 routeTo: 'boomtown'
+            });
+        };
+    </script>
+```
+### Add Id to Html Element
+```
+<div id="web-connect"></div>
+```
+
+## For the Windowed version
+### Include webConnectChatBox.js and webConnectChatBox.css
+```
+<link rel="stylesheet" type="text/css" href="https://webconnect.goboomtown.com/assets/webConnectChatBox.css">
+<script type="application/javascript" src="https://webconnect.goboomtown.com/assets/webConnectChatBox.js"></script>
+```
+### Include Code Snippet
+```
+    <script type="application/javascript">
+        /**
+         * Loads an instance of webConnect into element `el`.
+         *
+         * @param {String|Element} el An element, elementId or query string (e.g. #web-connect, #mySupportDiv, div.webConnect, etc.)
+         * @param {String} [options.width=640px] iFrame width
+         * @param {String} [options.height=480px] iFrame height
+         * @param {String} options.partnerToken API public key/token for the Partner Team. Required.
+         * @param {String} options.partnerTeam Partner Team ID from which private label settings, support email/phone/website are derived, and members are created/authenticated and linked to. Required.
+         * @param {String} [options.supportEmail] Whether or not to offer the 'Email Support' choice on the help screen. Optional, default to true.
+         * @param {String} [options.supportPhone] Whether or not to offer the 'Phone Support' choice on the help screen. Optional, default to true.
+         * @param {String} [options.supportWebsite] Whether or not to offer the 'Web Support' choice on the help screen. Optional, default to true.
+         * @param {String} [options.routeTo] 'default', 'boomtown', 'provider'. Controls whether to force route new issues created to Boomtown, to the Partner Team, or to not specify and thus allow the default behavior on the back-end.
+         * @param {String} [options.position] 'bottom-right', 'bottom-left', 'bottom-center', 'side-left', 'side-right. Controls where the chatbox will be positioned on the screen.
+         */
+        window.onload = function() {
+            WebConnect.load('#web-connect', {
+                partnerToken: '1234567890ABCDEFGHIJ',
+                partnerTeam: 'ABC-123',
+                width: '440px',
+                height: '640px',
+                supportEmail: 'true',
+                supportPhone: 'true',
+                supportWebsite: 'true',
+                routeTo: 'boomtown',
+                position: 'bottom-right'
             });
         };
     </script>
