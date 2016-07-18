@@ -120,7 +120,7 @@ A JavaScript SDK that allows Connect partners to integrate issue creation, notif
          * @param {String} [options.supportPhone] Whether or not to offer the 'Phone Support' choice on the help screen. Optional, default to true.
          * @param {String} [options.supportWebsite] Whether or not to offer the 'Web Support' choice on the help screen. Optional, default to true.
          * @param {String} [options.routeTo] 'default', 'boomtown', 'provider'. Controls whether to force route new issues created to Boomtown, to the Partner Team, or to not specify and thus allow the default behavior on the back-end.
-         * @param {String} [options.position] 'bottom-right', 'bottom-left', 'bottom-center', 'side-left', 'side-right. Controls where the chatbox will be positioned on the screen.
+         * @param {String} [options.position] 'bottom-right', 'bottom-left', 'bottom-center', 'side-left', 'side-right'. Controls where the chatbox will be positioned on the screen.
          */
         window.onload = function() {
             WebConnect.load('#web-connect', {
