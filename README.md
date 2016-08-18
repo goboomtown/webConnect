@@ -121,6 +121,8 @@ A JavaScript SDK that allows Connect partners to integrate issue creation, notif
          * @param {String} [options.supportWebsite] Whether or not to offer the 'Web Support' choice on the help screen. Optional, default to true.
          * @param {String} [options.routeTo] 'default', 'boomtown', 'provider'. Controls whether to force route new issues created to Boomtown, to the Partner Team, or to not specify and thus allow the default behavior on the back-end.
          * @param {String} [options.position] 'bottom-right', 'bottom-left', 'bottom-center', 'side-left', 'side-right'. Controls where the chatbox will be positioned on the screen.
+         * @param {String} [options.buttonColor] Overrides the default button color. Optional.
+         * @param {String} [options.buttonTextColor] Overrides the default button text color. Optional.
          */
         window.onload = function() {
             WebConnect.load('#web-connect', {
@@ -132,7 +134,9 @@ A JavaScript SDK that allows Connect partners to integrate issue creation, notif
                 supportPhone: 'true',
                 supportWebsite: 'true',
                 routeTo: 'boomtown',
-                position: 'bottom-right'
+                position: 'bottom-right',
+                buttonColor: "#123648",
+                buttonTextColor: "#fff"
             });
         };
     </script>
