@@ -57,6 +57,40 @@ A JavaScript SDK that allows Connect partners to integrate issue creation, notif
 9. Click on "Select File" button and select your local file
 10. Click on "Upload File" button to upload and save your file
 
+## AutoLogin Settings
+To use the auto login feature, you must specify a memberUserId OR memberUserEmail OR issueId parameter in the options object. Providing any of these parameters will log the user in automatically. Providing an issueId alone will auto login the user and additionally load the issue specified.  
+
+## Callback Settings
+To use the callback feature, you must specify the callback function as the third parameter in the  WebConnect.load(el, options, callback) event.  
+
+##Important Note
+You may use any of the auto login settings or callback settings together or independently.
+
+On the login event the application will send the following object to the callback function:
+```
+data: {
+    eventName: "message:memberLoaded",
+    eventData: {
+        members_id: "WA3QMJ",
+        members_locations_id: "WA3QMJ-FYH",
+        members_users_id: "PYUMK9-KKK",
+    }
+}
+```
+
+On the issue load event the application will send the following object to the callback function:
+```
+data: {
+    eventName: "message:issueLoaded",
+    eventData: {
+        issues_id: "WA3QMJ-FYH-BHBPUP"
+        members_id: "WA3QMJ",
+        members_locations_id: "WA3QMJ-FYH",
+        members_users_id: "PYUMK9-KKK",
+    }
+}
+```
+
 ## Usage
 
 ## For the Embedded version
@@ -79,6 +113,9 @@ A JavaScript SDK that allows Connect partners to integrate issue creation, notif
          * @param {String} [options.supportPhone] Whether or not to offer the 'Phone Support' choice on the help screen. Optional, default to true.
          * @param {String} [options.supportWebsite] Whether or not to offer the 'Web Support' choice on the help screen. Optional, default to true.
          * @param {String} [options.routeTo] 'default', 'boomtown', 'provider'. Controls whether to force route new issues created to Boomtown, to the Partner Team, or to not specify and thus allow the default behavior on the back-end.
+         * @param {Object} [options.memberUserId] Member user id to assume. Optional.
+         * @param {Object} [options.memberUserEmail] Member user email address to assume. Optional.
+         * @param {Object} [options.issueId] Issue id to assume. Optional.
          */
         window.onload = function() {
             WebConnect.load('#web-connect', {
@@ -123,6 +160,9 @@ A JavaScript SDK that allows Connect partners to integrate issue creation, notif
          * @param {String} [options.position] 'bottom-right', 'bottom-left', 'bottom-center', 'side-left', 'side-right'. Controls where the chatbox will be positioned on the screen.
          * @param {String} [options.buttonColor] Overrides the default button color. Optional.
          * @param {String} [options.buttonTextColor] Overrides the default button text color. Optional.
+         * @param {Object} [options.memberUserId] Member user id to assume. Optional.
+         * @param {Object} [options.memberUserEmail] Member user email address to assume. Optional.
+         * @param {Object} [options.issueId] Issue id to assume. Optional.
          */
         window.onload = function() {
             WebConnect.load('#web-connect', {
@@ -145,4 +185,140 @@ A JavaScript SDK that allows Connect partners to integrate issue creation, notif
 ```
 <div id="web-connect"></div>
 ```
+
+## For the Auto Login 
+### Include webConnect.js
+```
+<script type="application/javascript" src="https://webconnect.goboomtown.com/assets/webConnect.js"></script>
+```
+### Include Code Snippet
+```
+    <script type="application/javascript">
+        /**
+         * Loads an instance of webConnect into element `el`.
+         *
+         * @param {String|Element} el An element, elementId or query string (e.g. #web-connect, #mySupportDiv, div.webConnect, etc.)
+         * @param {String} [options.width=640px] iFrame width
+         * @param {String} [options.height=480px] iFrame height
+         * @param {String} options.partnerToken API public key/token for the Partner Team. Required.
+         * @param {String} options.partnerTeam Partner Team ID from which private label settings, support email/phone/website are derived, and members are created/authenticated and linked to. Required.
+         * @param {String} [options.supportEmail] Whether or not to offer the 'Email Support' choice on the help screen. Optional, default to true.
+         * @param {String} [options.supportPhone] Whether or not to offer the 'Phone Support' choice on the help screen. Optional, default to true.
+         * @param {String} [options.supportWebsite] Whether or not to offer the 'Web Support' choice on the help screen. Optional, default to true.
+         * @param {String} [options.routeTo] 'default', 'boomtown', 'provider'. Controls whether to force route new issues created to Boomtown, to the Partner Team, or to not specify and thus allow the default behavior on the back-end.
+         * @param {Object} [options.memberUserId] Member user id to assume. Optional.
+         * @param {Object} [options.memberUserEmail] Member user email address to assume. Optional.
+         * @param {Object} [options.issueId] Issue id to assume. Optional.
+         */
+        window.onload = function() {
+            WebConnect.load('#web-connect', {
+                partnerToken: '1234567890ABCDEFGHIJ',
+                partnerTeam: 'ABC-123',
+                width: '440px',
+                height: '640px',
+                supportEmail: 'true',
+                supportPhone: 'true',
+                supportWebsite: 'true',
+                routeTo: 'boomtown',
+                issueId: 'WA3QMJ-FYH-F8Z6QH', //load issue
+                memberUserId: 'PYUMK9-KKK', //auto login via member user id
+                memberUserEmail: 'stephanie+member@gizmocreative.com' //auto login via member user email
+            });
+        };
+    </script>
+```
+### Add Id to Html Element
+```
+<div id="web-connect"></div>
+```
+
+## For the Auto Login version
+### Include webConnect.js
+```
+<script type="application/javascript" src="https://webconnect.goboomtown.com/assets/webConnect.js"></script>
+```
+### Include Code Snippet
+```
+    <script type="application/javascript">
+        /**
+         * Loads an instance of webConnect into element `el`.
+         *
+         * @param {String|Element} el An element, elementId or query string (e.g. #web-connect, #mySupportDiv, div.webConnect, etc.)
+         * @param {String} [options.width=640px] iFrame width
+         * @param {String} [options.height=480px] iFrame height
+         * @param {String} options.partnerToken API public key/token for the Partner Team. Required.
+         * @param {String} options.partnerTeam Partner Team ID from which private label settings, support email/phone/website are derived, and members are created/authenticated and linked to. Required.
+         * @param {String} [options.supportEmail] Whether or not to offer the 'Email Support' choice on the help screen. Optional, default to true.
+         * @param {String} [options.supportPhone] Whether or not to offer the 'Phone Support' choice on the help screen. Optional, default to true.
+         * @param {String} [options.supportWebsite] Whether or not to offer the 'Web Support' choice on the help screen. Optional, default to true.
+         * @param {String} [options.routeTo] 'default', 'boomtown', 'provider'. Controls whether to force route new issues created to Boomtown, to the Partner Team, or to not specify and thus allow the default behavior on the back-end.
+         * @param {Object} [options.memberUserId] Member user id to assume. Optional.
+         * @param {Object} [options.memberUserEmail] Member user email address to assume. Optional.
+         * @param {Object} [options.issueId] Issue id to assume. Optional.
+         */
+        window.onload = function() {
+            WebConnect.load('#web-connect', {
+                partnerToken: '1234567890ABCDEFGHIJ',
+                partnerTeam: 'ABC-123',
+                width: '440px',
+                height: '640px',
+                supportEmail: 'true',
+                supportPhone: 'true',
+                supportWebsite: 'true',
+                routeTo: 'boomtown'
+            });
+        };
+    </script>
+```
+### Add Id to Html Element
+```
+<div id="web-connect"></div>
+```
+
+## For the Auto Login version
+### Include webConnect.js
+```
+<script type="application/javascript" src="https://webconnect.goboomtown.com/assets/webConnect.js"></script>
+```
+### Include Code Snippet
+```
+    <script type="application/javascript">
+        /**
+         * Loads an instance of webConnect into element `el`.
+         *
+         * @param {String|Element} el An element, elementId or query string (e.g. #web-connect, #mySupportDiv, div.webConnect, etc.)
+         * @param {String} [options.width=640px] iFrame width
+         * @param {String} [options.height=480px] iFrame height
+         * @param {String} options.partnerToken API public key/token for the Partner Team. Required.
+         * @param {String} options.partnerTeam Partner Team ID from which private label settings, support email/phone/website are derived, and members are created/authenticated and linked to. Required.
+         * @param {String} [options.supportEmail] Whether or not to offer the 'Email Support' choice on the help screen. Optional, default to true.
+         * @param {String} [options.supportPhone] Whether or not to offer the 'Phone Support' choice on the help screen. Optional, default to true.
+         * @param {String} [options.supportWebsite] Whether or not to offer the 'Web Support' choice on the help screen. Optional, default to true.
+         * @param {String} [options.routeTo] 'default', 'boomtown', 'provider'. Controls whether to force route new issues created to Boomtown, to the Partner Team, or to not specify and thus allow the default behavior on the back-end.
+         * @param {Object} [options.memberUserId] Member user id to assume. Optional.
+         * @param {Object} [options.memberUserEmail] Member user email address to assume. Optional.
+         * @param {Object} [options.issueId] Issue id to assume. Optional.
+         */
+        window.onload = function() {
+            WebConnect.load('#web-connect', {
+                partnerToken: '1234567890ABCDEFGHIJ',
+                partnerTeam: 'ABC-123',
+                width: '440px',
+                height: '640px',
+                supportEmail: 'true',
+                supportPhone: 'true',
+                supportWebsite: 'true',
+                routeTo: 'boomtown',
+            }, myCallback);
+        };
+        myCallback = function(data){
+            console.log('Data sent to callback function: ', data);
+        };
+    </script>
+```
+### Add Id to Html Element
+```
+<div id="web-connect"></div>
+```
+
 

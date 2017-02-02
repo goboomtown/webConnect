@@ -31,7 +31,10 @@
                 supportPhone: 'true',
                 supportWebsite: 'true',
                 routeTo: 'boomtown'
-            });
+            }, myCallback);
+        };
+        myCallback = function(data){
+            console.log('Data sent to callback function: ', data);
         };
     </script>
 </head>
