@@ -58,10 +58,10 @@ A JavaScript SDK that allows Connect partners to integrate issue creation, notif
 10. Click on "Upload File" button to upload and save your file
 
 ## AutoLogin Settings
-To use the auto login feature, you must specify a memberUserId and/or memberUserEmail and/or issueId parameter in the options object. Providing any of these options, or any combination of these options will log the user in automatically. Providing an issueId alone will auto login the user and additionally load the issue specified.  
+To use the auto login feature, you must specify a memberUserId and/or memberUserEmail and/or issueId parameter in the options object. Providing any of these options, or any combination of these options will log the user in automatically. Providing an issueId alone will auto login the user and additionally load the issue specified. You may use any of the auto login settings and callback settings together or independently. 
 
 ## Callback Settings
-To use the callback feature, you must specify the callback function as the third parameter in the  WebConnect.load(el, options, callback) method. You may use any of the auto login settings or callback settings together or independently.
+To use the callback feature, you must specify the callback function as the third parameter in the  WebConnect.load(el, options, callback) method. You may use any of the auto login settings and callback settings together or independently.
 
 ## Callback Usage
 
