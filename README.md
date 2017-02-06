@@ -219,8 +219,8 @@ data: {
                 supportPhone: 'true',
                 supportWebsite: 'true',
                 routeTo: 'boomtown',
-                issueId: 'WA3QMJ-FYH-F8Z6QH', //load issue
-                memberUserId: 'PYUMK9-KKK', //auto login via member user id
+                issueId: 'ABCDE-ABC-ABCDE', //load issue
+                memberUserId: 'ABCDE-ABC', //auto login via member user id
                 memberUserEmail: 'stephanie+member@gizmocreative.com' //auto login via member user email
             });
         };
@@ -231,7 +231,7 @@ data: {
 <div id="web-connect"></div>
 ```
 
-## For the Auto Login version
+## For the Callback version
 ### Include webConnect.js
 ```
 <script type="application/javascript" src="https://webconnect.goboomtown.com/assets/webConnect.js"></script>
@@ -265,7 +265,10 @@ data: {
                 supportPhone: 'true',
                 supportWebsite: 'true',
                 routeTo: 'boomtown'
-            });
+            }, myCallback);
+        };
+        myCallback = function(data){
+            console.log('Data sent to callback function: ', data);
         };
     </script>
 ```
@@ -274,7 +277,7 @@ data: {
 <div id="web-connect"></div>
 ```
 
-## For the Auto Login version
+## For the Auto Login w/ Callback version
 ### Include webConnect.js
 ```
 <script type="application/javascript" src="https://webconnect.goboomtown.com/assets/webConnect.js"></script>
@@ -308,6 +311,7 @@ data: {
                 supportPhone: 'true',
                 supportWebsite: 'true',
                 routeTo: 'boomtown',
+                memberUserEmail: 'somebody@somedomain.com', //auto login via member user id
             }, myCallback);
         };
         myCallback = function(data){
