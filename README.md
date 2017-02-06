@@ -311,7 +311,7 @@ data: {
                 supportPhone: 'true',
                 supportWebsite: 'true',
                 routeTo: 'boomtown',
-                memberUserEmail: 'somebody@somedomain.com', //auto login via member user id
+                memberUserEmail: 'somebody@somedomain.com', //auto login via member user email
             }, myCallback);
         };
         myCallback = function(data){
