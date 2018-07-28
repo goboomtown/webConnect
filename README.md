@@ -58,7 +58,7 @@ A JavaScript SDK that allows Connect partners to integrate issue creation, notif
 10. Click on "Upload File" button to upload and save your file
 
 ## AutoLogin Settings
-To use the auto login feature, you must specify a memberUserId and/or memberUserEmail and/or issueId parameter in the options object. Providing any of these options, or any combination of these options will log the user in automatically. Providing an issueId alone will auto login the user and additionally load the issue specified. You may use any of the auto login settings and callback settings together or independently. 
+To use the auto login feature, you must specify a memberUserId and/or memberUserEmail and/or issueId parameter in the options object. Providing any of these options, or any combination of these options will log the user in automatically. Providing an issueId alone will auto login the user and additionally load the issue specified. You may use any of the auto login settings and callback settings together or independently.
 
 ## Callback Settings
 To use the callback feature, you must specify the callback function as the third parameter in the  WebConnect.load(el, options, callback) method. You may use any of the auto login settings and callback settings together or independently.
@@ -115,6 +115,9 @@ data: {
          * @param {Object} [options.memberUserId] Member user id to assume. Optional.
          * @param {Object} [options.memberUserEmail] Member user email address to assume. Optional.
          * @param {Object} [options.issueId] Issue id to assume. Optional.
+         * @param {Object} [options.interstitialText] Interstitial banner text. Optional.
+         * @param {Object} [options.interstitialButtonText] Interstitial button label. Optional.
+         * @param {Object} [options.interstitialImage] Interstitial icon (48x48). Optional.
          */
         window.onload = function() {
             WebConnect.load('#web-connect', {
@@ -122,6 +125,9 @@ data: {
                 partnerTeam: 'ABC-123',
                 width: '440px',
                 height: '640px',
+                interstitialText: 'Welcome to Web Connect, how many we help?',
+                interstitialButtonText: 'Chat Now',
+                interstitialImage: 'https://goboomtown.com/path/to/image/icon.png'
                 supportEmail: 'true',
                 supportPhone: 'true',
                 supportWebsite: 'true',
@@ -185,7 +191,7 @@ data: {
 <div id="web-connect"></div>
 ```
 
-## For the Auto Login 
+## For the Auto Login
 ### Include webConnect.js
 ```
 <script type="application/javascript" src="https://webconnect.goboomtown.com/assets/webConnect.js"></script>
@@ -323,5 +329,3 @@ data: {
 ```
 <div id="web-connect"></div>
 ```
-
-
