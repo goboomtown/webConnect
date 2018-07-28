@@ -168,6 +168,9 @@ data: {
          * @param {Object} [options.memberUserId] Member user id to assume. Optional.
          * @param {Object} [options.memberUserEmail] Member user email address to assume. Optional.
          * @param {Object} [options.issueId] Issue id to assume. Optional.
+         * @param {Object} [options.interstitialText] Interstitial banner text. Optional.
+         * @param {Object} [options.interstitialButtonText] Interstitial button label. Optional.
+         * @param {Object} [options.interstitialImage] Interstitial icon (48x48). Optional.
          */
         window.onload = function() {
             WebConnect.load('#web-connect', {
@@ -181,7 +184,10 @@ data: {
                 routeTo: 'boomtown',
                 position: 'bottom-right',
                 buttonColor: "#123648",
-                buttonTextColor: "#fff"
+                buttonTextColor: "#fff",
+                interstitialText: 'Welcome to Web Connect, how many we help?',
+                interstitialButtonText: 'Chat Now',
+                interstitialImage: 'https://goboomtown.com/path/to/image/icon.png'
             });
         };
     </script>
@@ -214,6 +220,9 @@ data: {
          * @param {Object} [options.memberUserId] Member user id to assume. Optional.
          * @param {Object} [options.memberUserEmail] Member user email address to assume. Optional.
          * @param {Object} [options.issueId] Issue id to assume. Optional.
+         * @param {Object} [options.interstitialText] Interstitial banner text. Optional.
+         * @param {Object} [options.interstitialButtonText] Interstitial button label. Optional.
+         * @param {Object} [options.interstitialImage] Interstitial icon (48x48). Optional.
          */
         window.onload = function() {
             WebConnect.load('#web-connect', {
@@ -227,7 +236,10 @@ data: {
                 routeTo: 'boomtown',
                 issueId: 'ABCDE-ABC-ABCDE', //load issue
                 memberUserId: 'ABCDE-ABC', //auto login via member user id
-                memberUserEmail: 'stephanie+member@gizmocreative.com' //auto login via member user email
+                memberUserEmail: 'stephanie+member@gizmocreative.com', //auto login via member user email
+                interstitialText: 'Welcome to Web Connect, how many we help?',
+                interstitialButtonText: 'Chat Now',
+                interstitialImage: 'https://goboomtown.com/path/to/image/icon.png'
             });
         };
     </script>
@@ -270,7 +282,10 @@ data: {
                 supportEmail: 'true',
                 supportPhone: 'true',
                 supportWebsite: 'true',
-                routeTo: 'boomtown'
+                routeTo: 'boomtown',
+                interstitialText: 'Welcome to Web Connect, how many we help?',
+                interstitialButtonText: 'Chat Now',
+                interstitialImage: 'https://goboomtown.com/path/to/image/icon.png'
             }, myCallback);
         };
         myCallback = function(data){
@@ -306,6 +321,9 @@ data: {
          * @param {Object} [options.memberUserId] Member user id to assume. Optional.
          * @param {Object} [options.memberUserEmail] Member user email address to assume. Optional.
          * @param {Object} [options.issueId] Issue id to assume. Optional.
+         * @param {Object} [options.interstitialText] Interstitial banner text. Optional.
+         * @param {Object} [options.interstitialButtonText] Interstitial button label. Optional.
+         * @param {Object} [options.interstitialImage] Interstitial icon (48x48). Optional.
          */
         window.onload = function() {
             WebConnect.load('#web-connect', {
@@ -318,6 +336,9 @@ data: {
                 supportWebsite: 'true',
                 routeTo: 'boomtown',
                 memberUserEmail: 'somebody@somedomain.com', //auto login via member user email
+                interstitialText: 'Welcome to Web Connect, how many we help?',
+                interstitialButtonText: 'Chat Now',
+                interstitialImage: 'https://goboomtown.com/path/to/image/icon.png'
             }, myCallback);
         };
         myCallback = function(data){
