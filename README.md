@@ -115,9 +115,6 @@ data: {
          * @param {Object} [options.memberUserId] Member user id to assume. Optional.
          * @param {Object} [options.memberUserEmail] Member user email address to assume. Optional.
          * @param {Object} [options.issueId] Issue id to assume. Optional.
-         * @param {Object} [options.interstitialText] Interstitial banner text. Optional.
-         * @param {Object} [options.interstitialButtonText] Interstitial button label. Optional.
-         * @param {Object} [options.interstitialImage] Interstitial icon (48x48). Optional.
          */
         window.onload = function() {
             WebConnect.load('#web-connect', {
@@ -125,9 +122,6 @@ data: {
                 partnerTeam: 'ABC-123',
                 width: '440px',
                 height: '640px',
-                interstitialText: 'Welcome to Web Connect, how many we help?',
-                interstitialButtonText: 'Chat Now',
-                interstitialImage: 'https://goboomtown.com/path/to/image/icon.png'
                 supportEmail: 'true',
                 supportPhone: 'true',
                 supportWebsite: 'true',
