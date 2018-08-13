@@ -3,7 +3,7 @@
 ## Overview
 A JavaScript SDK that allows Connect partners to integrate issue creation, notification, and chat in a single button.
 
-#Getting Started
+## Getting Started
 1. Clone this Repository
 2. Include webConnect.js in the head of your page
 3. Include webConnect snippet in your page
