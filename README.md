@@ -11,7 +11,7 @@ A JavaScript SDK that allows Connect partners to integrate issue creation, notif
 4. Set your partnerToken and PartnerTeam, and set your desired parameters
 
 ## Provider Token Generation
-1. Log onto the Admin Portal (https://admin.goboomtown.com)
+1. Log onto Relay Desktop (https://relay.goboomtown.com)
 2. Click "Providers" in the left menu
 3. Find your provider in the list
 4. Double-click your provider to show the "Edit Provider" window
@@ -21,7 +21,7 @@ A JavaScript SDK that allows Connect partners to integrate issue creation, notif
 8. Copy the access token
 
 ## Partner Team Id
-1. Log onto the Admin Portal (https://admin.goboomtown.com)
+1. Log onto Relay Desktop (https://relay.goboomtown.com)
 2. Click "Providers" in the left menu
 3. Find your provider in the list
 4. Double-click your provider to show the "Edit Provider" window
@@ -32,7 +32,7 @@ A JavaScript SDK that allows Connect partners to integrate issue creation, notif
 9. Copy the team id
 
 ## Private Label Template Settings
-1. Log onto the Admin Portal (https://admin.goboomtown.com)
+1. Log onto Relay Desktop (https://relay.goboomtown.com)
 2. Click "Providers" in the left menu
 3. Find your provider in the list
 4. Double-click your provider to show the "Edit Provider" window
@@ -46,7 +46,7 @@ A JavaScript SDK that allows Connect partners to integrate issue creation, notif
 12. Set Link Color to set the color of page links
 
 ## Private Label Logo Settings
-1. Log onto the Admin Portal (https://admin.goboomtown.com)
+1. Log onto Relay Desktop (https://relay.goboomtown.com)
 2. Click "Providers" in the left menu
 3. Find your provider in the list
 4. Double-click your provider to show the "Edit Provider" window
